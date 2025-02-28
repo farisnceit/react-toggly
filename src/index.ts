@@ -1,2 +1,3 @@
-export { default as Confirmation } from './Confirmation';
-export type { ConfirmationProps } from './Confirmation';
+import ToggleSwitch from './components/Toggle/Toggle';
+export default ToggleSwitch;
+export type { ToggleProps } from './components/Toggle/types';

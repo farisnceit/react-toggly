@@ -1,4 +1,6 @@
-type Theme = 'ios' | 'bootstrap' | 'tailwind';
+import React from 'react';
+
+export type Theme = 'ios' | 'bootstrap' | 'tailwind';
 
 export interface ToggleProps {
   checked?: boolean;
@@ -18,4 +20,6 @@ export interface ToggleProps {
   disabled?: boolean;
   className?: string;
   theme?: Theme;
+  frontText?: React.ReactNode; // Accepts React nodes (e.g., SVG icons, text, components)
+  backText?: React.ReactNode;  // Accepts React nodes (e.g., SVG icons, text, components)
 }

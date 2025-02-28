@@ -1,4 +1,4 @@
-import React$1 from 'react';
+import React from 'react';
 
 type Theme = 'ios' | 'bootstrap' | 'tailwind';
 interface ToggleProps {
@@ -19,8 +19,10 @@ interface ToggleProps {
     disabled?: boolean;
     className?: string;
     theme?: Theme;
+    frontText?: React.ReactNode;
+    backText?: React.ReactNode;
 }
 
-declare const Toggle: React$1.FC<ToggleProps>;
+declare const Toggle: React.FC<ToggleProps>;
 
 export { type ToggleProps, Toggle as default };

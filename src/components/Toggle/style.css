@@ -1,138 +1,159 @@
 /* Define CSS variables */
 :root {
-    /* Colors */
-    --react-toggly-color-default: #ccc;
-    --react-toggly-color-checked: #4caf50;
-    --react-toggly-color-knob: #ffffff;
-    --react-toggly-color-disabled: rgba(0, 0, 0, 0.5);
-  
-    /* Sizes */
-    --react-toggly-width: 60px;
-    --react-toggly-height: 34px;
-    --react-toggly-knob-size: 26px;
-    --react-toggly-knob-offset: 4px;
-  
-    /* Theme-specific colors */
-    --react-toggly-ios-background: #e0e0e0;
-    --react-toggly-ios-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    --react-toggly-bootstrap-background: #6c757d;
-    --react-toggly-bootstrap-checked: #0d6efd;
-    --react-toggly-tailwind-background: #d1d5db;
-    --react-toggly-tailwind-checked: #3b82f6;
-  }
-  
-  /* Block: react-toggly */
-  .react-toggly__wrapper {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    width: var(--react-toggly-width);
-    height: var(--react-toggly-height);
-  }
-  
-  /* Modifier: Disabled state */
-  .react-toggly__wrapper--disabled {
-    opacity: var(--react-toggly-color-disabled);
-    cursor: not-allowed;
-  }
-  
-  /* Element: Input */
-  .react-toggly__input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* Element: Slider */
-  .react-toggly__slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--react-toggly-color-default);
-    transition: 0.4s;
-    border-radius: var(--react-toggly-height);
-  }
-  
-  /* Element: Slider knob */
-  .react-toggly__slider::before {
-    position: absolute;
-    content: '';
-    height: var(--react-toggly-knob-size);
-    width: var(--react-toggly-knob-size);
-    left: var(--react-toggly-knob-offset);
-    bottom: var(--react-toggly-knob-offset);
-    background-color: var(--react-toggly-color-knob);
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  
-  /* Modifier: Checked state */
-  .react-toggly__input:checked + .react-toggly__slider {
-    background-color: var(--react-toggly-color-checked);
-  }
-  
-  .react-toggly__input:checked + .react-toggly__slider::before {
-    transform: translateX(calc(var(--react-toggly-width) - var(--react-toggly-knob-size) - 2 * var(--react-toggly-knob-offset)));
-  }
-  
-  /* Modifier: iOS theme */
-  .react-toggly__wrapper--ios .react-toggly__slider {
-    background-color: var(--react-toggly-ios-background);
-  }
-  
-  .react-toggly__wrapper--ios .react-toggly__slider::before {
-    background-color: var(--react-toggly-color-knob);
-    box-shadow: var(--react-toggly-ios-shadow);
-  }
-  
-  .react-toggly__wrapper--ios .react-toggly__input:checked + .react-toggly__slider {
-    background-color: var(--react-toggly-color-checked);
-  }
-  
-  /* Modifier: Bootstrap theme */
-  .react-toggly__wrapper--bootstrap .react-toggly__slider {
-    background-color: var(--react-toggly-bootstrap-background);
-  }
-  
-  .react-toggly__wrapper--bootstrap .react-toggly__slider::before {
-    background-color: var(--react-toggly-color-knob);
-  }
-  
-  .react-toggly__wrapper--bootstrap .react-toggly__input:checked + .react-toggly__slider {
-    background-color: var(--react-toggly-bootstrap-checked);
-  }
-  
-  /* Modifier: Tailwind theme */
-  .react-toggly__wrapper--tailwind .react-toggly__slider {
-    background-color: var(--react-toggly-tailwind-background);
-  }
-  
-  .react-toggly__wrapper--tailwind .react-toggly__slider::before {
-    background-color: var(--react-toggly-color-knob);
-  }
-  
-  .react-toggly__wrapper--tailwind .react-toggly__input:checked + .react-toggly__slider {
-    background-color: var(--react-toggly-tailwind-checked);
-  }
-  
-  /* Element: Icon wrapper */
-  .react-toggly__icon-wrapper {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Element: Checked icon */
-  .react-toggly__checked-icon {
-    left: var(--react-toggly-knob-offset);
-  }
-  
-  /* Element: Unchecked icon */
-  .react-toggly__unchecked-icon {
-    right: var(--react-toggly-knob-offset);
-  }
+  /* Colors */
+  --react-toggly-color-default: #ccc;
+  --react-toggly-color-checked: #4caf50;
+  --react-toggly-color-knob: #ffffff;
+  --react-toggly-color-disabled: rgba(0, 0, 0, 0.5);
+  --react-toggly-text-color: #333;
+
+  /* Sizes */
+  --react-toggly-width: 60px;
+  --react-toggly-height: 34px;
+  --react-toggly-knob-size: 26px;
+  --react-toggly-knob-offset: 4px;
+  --react-toggly-text-gap: 8px;
+
+  /* Theme-specific colors */
+  --react-toggly-ios-background: #e0e0e0;
+  --react-toggly-ios-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --react-toggly-bootstrap-background: #6c757d;
+  --react-toggly-bootstrap-checked: #0d6efd;
+  --react-toggly-tailwind-background: #d1d5db;
+  --react-toggly-tailwind-checked: #3b82f6;
+}
+
+/* Container for the toggle and text */
+.react-toggly-container {
+  display: flex;
+  align-items: center;
+  gap: var(--react-toggly-text-gap);
+}
+
+/* Block: Toggle wrapper */
+.react-toggly__wrapper {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: var(--react-toggly-width);
+  height: var(--react-toggly-height);
+}
+
+/* Modifier: Disabled state */
+.react-toggly__wrapper--disabled {
+  opacity: var(--react-toggly-color-disabled);
+  cursor: not-allowed;
+}
+
+/* Element: Input */
+.react-toggly__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Element: Slider */
+.react-toggly__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--react-toggly-color-default);
+  transition: 0.4s;
+  border-radius: var(--react-toggly-height);
+}
+
+/* Element: Slider knob */
+.react-toggly__slider::before {
+  position: absolute;
+  content: '';
+  height: var(--react-toggly-knob-size);
+  width: var(--react-toggly-knob-size);
+  left: var(--react-toggly-knob-offset);
+  bottom: var(--react-toggly-knob-offset);
+  background-color: var(--react-toggly-color-knob);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Modifier: Checked state */
+.react-toggly__input:checked + .react-toggly__slider {
+  background-color: var(--react-toggly-color-checked);
+}
+
+.react-toggly__input:checked + .react-toggly__slider::before {
+  transform: translateX(calc(var(--react-toggly-width) - var(--react-toggly-knob-size) - 2 * var(--react-toggly-knob-offset)));
+}
+
+/* Modifier: iOS theme */
+.react-toggly__wrapper--ios .react-toggly__slider {
+  background-color: var(--react-toggly-ios-background);
+}
+
+.react-toggly__wrapper--ios .react-toggly__slider::before {
+  background-color: var(--react-toggly-color-knob);
+  box-shadow: var(--react-toggly-ios-shadow);
+}
+
+.react-toggly__wrapper--ios .react-toggly__input:checked + .react-toggly__slider {
+  background-color: var(--react-toggly-color-checked);
+}
+
+/* Modifier: Bootstrap theme */
+.react-toggly__wrapper--bootstrap .react-toggly__slider {
+  background-color: var(--react-toggly-bootstrap-background);
+}
+
+.react-toggly__wrapper--bootstrap .react-toggly__slider::before {
+  background-color: var(--react-toggly-color-knob);
+}
+
+.react-toggly__wrapper--bootstrap .react-toggly__input:checked + .react-toggly__slider {
+  background-color: var(--react-toggly-bootstrap-checked);
+}
+
+/* Modifier: Tailwind theme */
+.react-toggly__wrapper--tailwind .react-toggly__slider {
+  background-color: var(--react-toggly-tailwind-background);
+}
+
+.react-toggly__wrapper--tailwind .react-toggly__slider::before {
+  background-color: var(--react-toggly-color-knob);
+}
+
+.react-toggly__wrapper--tailwind .react-toggly__input:checked + .react-toggly__slider {
+  background-color: var(--react-toggly-tailwind-checked);
+}
+
+/* Element: Icon wrapper */
+.react-toggly__icon-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Element: Checked icon */
+.react-toggly__checked-icon {
+  left: var(--react-toggly-knob-offset);
+}
+
+/* Element: Unchecked icon */
+.react-toggly__unchecked-icon {
+  right: var(--react-toggly-knob-offset);
+}
+
+/* Front text (left side) */
+.react-toggly__front-text {
+  font-size: 14px;
+  color: var(--react-toggly-text-color);
+}
+
+/* Back text (right side) */
+.react-toggly__back-text {
+  font-size: 14px;
+  color: var(--react-toggly-text-color);
+}

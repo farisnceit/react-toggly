@@ -1,7 +1,7 @@
 {
-  "name": "react-confirmation",
+  "name": "react-toggly",
   "version": "1.0.0",
-  "description": "A simple React confirmation dialog component",
+  "description": "A highly customizable and themeable toggle switch component for React, built with TypeScript and styled-components. Supports multiple themes like iOS, Bootstrap, and Tailwind CSS, and allows for custom icons, accessibility features, and controlled/uncontrolled behavior.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",

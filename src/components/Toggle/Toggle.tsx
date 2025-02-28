@@ -3,77 +3,77 @@ import { ToggleProps } from './types';
 
 
 const Toggle: React.FC<ToggleProps> = ({
-  checked,
-  defaultChecked = false,
-  onChange,
-  onFocus,
-  onBlur,
-  name,
-  value,
-  id,
-  icons,
-  'aria-labelledby': ariaLabelledBy,
-  'aria-label': ariaLabel,
-  disabled,
-  className,
-  theme = 'ios',
-  frontText, // Text to display on the left of the toggle
-  backText,  // Text to display on the right of the toggle
+  isChecked,
+  defaultIsChecked = false,
+  onToggleChange,
+  onToggleFocus,
+  onToggleBlur,
+  inputName,
+  inputValue,
+  inputId,
+  customIcons,
+  ariaLabelledBy,
+  ariaLabel,
+  isDisabled,
+  containerClassName,
+  toggleTheme = 'ios',
+  leftLabel,
+  rightLabel,
 }) => {
-  const isControlled = checked !== undefined;
-  const [internalChecked, setInternalChecked] = React.useState(defaultChecked);
+  const isControlled = isChecked !== undefined;
+  const [internalChecked, setInternalChecked] = React.useState(defaultIsChecked);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (disabled) return;
+    if (isDisabled) return;
     if (!isControlled) {
       setInternalChecked(e.target.checked);
     }
-    onChange?.(e);
+    onToggleChange?.(e);
   };
 
-  const isChecked = isControlled ? checked : internalChecked;
+  const isToggleChecked = isControlled ? isChecked : internalChecked;
 
   return (
-    <div className={`react-toggly-container ${className || ''}`}>
-      {/* Front text (left side) */}
-      {frontText && <span className="react-toggly__front-text">{frontText}</span>}
+    <div className={`react-toggly-container ${containerClassName || ''}`}>
+      {/* Left label (text or icon) */}
+      {leftLabel && <span className="react-toggly__left-label">{leftLabel}</span>}
 
       {/* Toggle switch */}
       <label
-        className={`react-toggly__wrapper react-toggly__wrapper--${theme} ${
-          disabled ? 'react-toggly__wrapper--disabled' : ''
+        className={`react-toggly__wrapper react-toggly__wrapper--${toggleTheme} ${
+          isDisabled ? 'react-toggly__wrapper--disabled' : ''
         }`}
       >
         <input
           type="checkbox"
           className="react-toggly__input"
-          checked={isChecked}
+          checked={isToggleChecked}
           onChange={handleChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          name={name}
-          value={value}
-          id={id}
+          onFocus={onToggleFocus}
+          onBlur={onToggleBlur}
+          name={inputName}
+          value={inputValue}
+          id={inputId}
           aria-labelledby={ariaLabelledBy}
           aria-label={ariaLabel}
-          disabled={disabled}
+          disabled={isDisabled}
         />
         <span className="react-toggly__slider">
-          {icons?.checked && isChecked && (
+          {customIcons?.checked && isToggleChecked && (
             <div className="react-toggly__icon-wrapper react-toggly__checked-icon">
-              {icons.checked}
+              {customIcons.checked}
             </div>
           )}
-          {icons?.unchecked && !isChecked && (
+          {customIcons?.unchecked && !isToggleChecked && (
             <div className="react-toggly__icon-wrapper react-toggly__unchecked-icon">
-              {icons.unchecked}
+              {customIcons.unchecked}
             </div>
           )}
         </span>
       </label>
 
-      {/* Back text (right side) */}
-      {backText && <span className="react-toggly__back-text">{backText}</span>}
+      {/* Right label (text or icon) */}
+      {rightLabel && <span className="react-toggly__right-label">{rightLabel}</span>}
     </div>
   );
 };

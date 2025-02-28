@@ -1,6 +1,4 @@
-import React from 'react';
-
-export type Theme = 'ios' | 'bootstrap' | 'tailwind';
+type Theme = 'ios' | 'bootstrap' | 'tailwind';
 
 export interface ToggleProps {
   checked?: boolean;

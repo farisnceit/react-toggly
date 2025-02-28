@@ -5,6 +5,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import terser  from '@rollup/plugin-terser';
 import { dts } from "rollup-plugin-dts";
+import copy from 'rollup-plugin-copy';
 
 export default [
     // Bundle for CommonJS & ESM
@@ -43,6 +44,14 @@ export default [
                 extract: 'dist/styles.css', // Extract CSS to a separate file
                 modules: true,
             }),
+            copy({
+                targets: [
+                  {
+                    src: 'src/components/Toggle/style.css', // Source file
+                    dest: 'dist/', // Destination folder
+                  },
+                ],
+              }),
             terser(),
         ],
         external: ['react', 'react-dom','react/jsx-runtime'],

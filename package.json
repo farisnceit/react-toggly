@@ -18,6 +18,7 @@
   "scripts": {
     "dev": "vite",
     "build": "rollup -c",
+    "watch": "rollup -c -w",
     "lint": "eslint .",
     "prepublishOnly": "npm run lint && npm run build"
   },
@@ -39,6 +40,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.14.0",
     "rollup": "^4.34.6",
+    "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",

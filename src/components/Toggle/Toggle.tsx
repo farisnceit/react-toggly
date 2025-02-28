@@ -1,12 +1,6 @@
 import React from 'react';
 import { ToggleProps } from './types';
-import {
-  ToggleWrapper,
-  ToggleInput,
-  Slider,
-  CheckedIcon,
-  UncheckedIcon,
-} from './styles';
+
 
 const Toggle: React.FC<ToggleProps> = ({
   checked,
@@ -38,29 +32,38 @@ const Toggle: React.FC<ToggleProps> = ({
   const isChecked = isControlled ? checked : internalChecked;
 
   return (
-    <ToggleWrapper disabled={disabled} className={className} theme={theme}>
-      <ToggleInput
-        type="checkbox"
-        checked={isChecked}
-        onChange={handleChange}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        name={name}
-        value={value}
-        id={id}
-        aria-labelledby={ariaLabelledBy}
-        aria-label={ariaLabel}
-        disabled={disabled}
-      />
-      <Slider className="slider" theme={theme}>
-        {icons?.checked && isChecked && (
-          <CheckedIcon>{icons.checked}</CheckedIcon>
-        )}
-        {icons?.unchecked && !isChecked && (
-          <UncheckedIcon>{icons.unchecked}</UncheckedIcon>
-        )}
-      </Slider>
-    </ToggleWrapper>
+    <label
+  className={`react-toggly__wrapper react-toggly__wrapper--${theme} ${
+    disabled ? 'react-toggly__wrapper--disabled' : ''
+  } ${className || ''}`}
+>
+  <input
+    type="checkbox"
+    className="react-toggly__input"
+    checked={isChecked}
+    onChange={handleChange}
+    onFocus={onFocus}
+    onBlur={onBlur}
+    name={name}
+    value={value}
+    id={id}
+    aria-labelledby={ariaLabelledBy}
+    aria-label={ariaLabel}
+    disabled={disabled}
+  />
+  <span className="react-toggly__slider">
+    {icons?.checked && isChecked && (
+      <div className="react-toggly__icon-wrapper react-toggly__checked-icon">
+        {icons.checked}
+      </div>
+    )}
+    {icons?.unchecked && !isChecked && (
+      <div className="react-toggly__icon-wrapper react-toggly__unchecked-icon">
+        {icons.unchecked}
+      </div>
+    )}
+  </span>
+</label>
   );
 };
 

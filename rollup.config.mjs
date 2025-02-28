@@ -25,7 +25,7 @@ export default [
             {
                 file: "dist/index.umd.js",
                 format: "umd",
-                name: "ReactConfirmation", // Global variable in browser
+                name: "reactToggly", // Global variable in browser
                 globals: {
                   react: "React",
                   "react-dom": "ReactDOM",

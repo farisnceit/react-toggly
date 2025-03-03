@@ -9,8 +9,8 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code }) => {
   const formattedCode = code.trim();
 
   return (
-    <div className="code-block">
-      <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm font-mono overflow-x-auto">
+    <div className="code-block bg-gray-200">
+      <pre className="bg-gray-100 dark:bg-gray-800 dark:text-white p-4 rounded-lg text-sm font-mono overflow-x-auto">
         <code className="language-javascript">
           {formattedCode.split('\n').map((line, index) => (
             <React.Fragment key={index}>

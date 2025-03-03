@@ -9,22 +9,37 @@ import "./Demo.css"
 
 
 const Demo: React.FC = () => {
-  const [isLoaded, setIsLoaded] = React.useState(true);
+  // Configuration state
+  const [config, setConfig] = React.useState<Partial<ToggleProps>>({
+    isChecked: false,
+    toggleTheme: 'ios',
+    leftLabel: '',
+    rightLabel: '',
+    isDisabled: false,
+    customIcons: undefined,
+  });
 
- 
+  // Code preview string
+  const getCodePreview = () => {
+    const props = [];
+    if (config.isChecked !== undefined) props.push(`isChecked={${config.isChecked}}`);
+    if (config.toggleTheme) props.push(`toggleTheme="${config.toggleTheme}"`);
+    if (config.leftLabel) props.push(`leftLabel="${config.leftLabel}"`);
+    if (config.rightLabel) props.push(`rightLabel="${config.rightLabel}"`);
+    if (config.isDisabled) props.push(`isDisabled={${config.isDisabled}}`);
+    if (config.customIcons) props.push(`customIcons={{ checked: "✓", unchecked: "✕" }}`);
 
-  if (!isLoaded) {
-    return (
-      <div className="loading-spinner">
-        <div className="spinner"></div>
-      </div>
-    );
-  }
+    return `<ToggleSwitch\n  ${props.join('\n  ')}\n  onToggleChange={(e) => console.log('Toggle changed:', e.target.checked)}\n/>`;
+  };
+
+  const handleToggleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setConfig(prev => ({ ...prev, isChecked: e.target.checked }));
+  };
 
   return (
-    <div className="demo-container">
+    <div className="demo-container bg-grey-100">
       {/* Header */}
-      <header className="demo-header">
+      <header className=" bg-gradient-to-r from-blue-800 to-indigo-900  pb-[300px] pt-[100px]  text-white">
         <div className="header-content">
           <h1>React Toggley</h1>
           <p>
@@ -34,9 +49,100 @@ const Demo: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main className="demo-main">
+      <main className="demo-main mx-auto  mt-[-300px] z-10">
+
+        {/* Live Preview */}
+        <section className="bg-white rounded-lg shadow-md p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Live Preview</h2>
+          <div className="flex items-center justify-center min-h-[100px] bg-gray-50 rounded-lg p-6">
+            <ToggleSwitch
+              {...config}
+              onToggleChange={handleToggleChange}
+              customIcons={config.customIcons ? {
+                checked: <span>✓</span>,
+                unchecked: <span>✕</span>
+              } : undefined}
+            />
+          </div>
+        </section>
+
+        {/* Configuration and Code Preview */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Configuration Panel */}
+          <section className="bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Configuration</h2>
+            <div className="space-y-4">
+              <label className="flex items-center gap-2">
+                <span className="text-gray-700">Theme:</span>
+                <select
+                  value={config.toggleTheme}
+                  onChange={(e) => setConfig(prev => ({ ...prev, toggleTheme: e.target.value as ToggleProps['toggleTheme'] }))}
+                  className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="ios">iOS</option>
+                  <option value="bootstrap">Bootstrap</option>
+                  <option value="tailwind">Tailwind</option>
+                </select>
+              </label>
+
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={config.isDisabled}
+                  onChange={(e) => setConfig(prev => ({ ...prev, isDisabled: e.target.checked }))}
+                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                />
+                <span className="text-gray-700">Disabled</span>
+              </label>
+
+              <label className="flex items-center gap-2">
+                <span className="text-gray-700">Left Label:</span>
+                <input
+                  type="text"
+                  value={String(config.leftLabel || '')}
+                  onChange={(e) => setConfig(prev => ({ ...prev, leftLabel: e.target.value }))}
+                  placeholder="Enter left label"
+                  className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </label>
+
+              <label className="flex items-center gap-2">
+                <span className="text-gray-700">Right Label:</span>
+                <input
+                  type="text"
+                  value={String(config.rightLabel || '')}
+                  onChange={(e) => setConfig(prev => ({ ...prev, rightLabel: e.target.value }))}
+                  placeholder="Enter right label"
+                  className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </label>
+
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={!!config.customIcons}
+                  onChange={(e) => setConfig(prev => ({
+                    ...prev,
+                    customIcons: e.target.checked ? {} : undefined
+                  }))}
+                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                />
+                <span className="text-gray-700">Show Icons (✓/✕)</span>
+              </label>
+            </div>
+          </section>
+
+          {/* Code Preview */}
+          <section className="bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Code Preview</h2>
+            <pre className="bg-gray-800 rounded-lg p-4 overflow-x-auto">
+              <code className="text-gray-100 font-mono">{getCodePreview()}</code>
+            </pre>
+          </section>
+        </div>
+
         {/* Installation */}
-        <section className="installation-section">
+        <section className="installation-section mt-8">
           <h2>Installation</h2>
           <div className="installation-grid">
             <div>
@@ -69,7 +175,7 @@ const MyComponent = () => {
         >
           <ToggleSwitch
             isChecked={false}
-            onToggleChange={() => {}}
+            onToggleChange={() => { }}
           />
         </DemoSection>
 
@@ -115,7 +221,7 @@ const MyComponent = () => {
           <ToggleSwitch
             leftLabel="Off"
             rightLabel="On"
-            onToggleChange={() => {}}
+            onToggleChange={() => { }}
           />
         </DemoSection>
 
@@ -136,7 +242,7 @@ const MyComponent = () => {
               checked: <span>✓</span>,
               unchecked: <span>✕</span>
             }}
-            onToggleChange={() => {}}
+            onToggleChange={() => { }}
           />
         </DemoSection>
 
@@ -189,7 +295,7 @@ const MyComponent = () => {
                 </tr>
                 <tr>
                   <td>onToggleChange</td>
-                  <td><pre>(e: ChangeEvent) => void</pre></td>
+                  <td><pre><code>(e: ChangeEvent) =&gt; void</code></pre></td>
                   <td>-</td>
                   <td>Change event handler</td>
                 </tr>

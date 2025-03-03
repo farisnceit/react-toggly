@@ -22,13 +22,13 @@
 .header-content h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #1a202c;
+ 
   margin-bottom: 1rem;
 }
 
 .header-content p {
   font-size: 1.25rem;
-  color: #4a5568;
+  
   max-width: 48rem;
   margin: 0 auto;
 }
@@ -36,7 +36,7 @@
 /* Main Content */
 .demo-main {
   max-width: 1280px;
-  margin: 0 auto;
+ 
   padding: 3rem 1rem;
 }
 
@@ -48,7 +48,7 @@
 .installation-section h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #1a202c;
+  
   margin-bottom: 1.5rem;
 }
 
@@ -61,7 +61,7 @@
 .installation-label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #4a5568;
+  
   margin-bottom: 0.5rem;
 }
 
@@ -77,12 +77,12 @@
 .demo-section-title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #1a202c;
+  
   margin-bottom: 1rem;
 }
 
 .demo-section-description {
-  color: #4a5568;
+  
   margin-bottom: 1.5rem;
 }
 
@@ -111,7 +111,7 @@
 .demo-section-code-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #2d3748;
+  
   margin-bottom: 1rem;
 }
 
@@ -127,7 +127,7 @@
 
 /* Code Block */
 .code-block {
-  background-color: #1a202c;
+  
   border-radius: 0.5rem;
   padding: 1.5rem;
   overflow-x: auto;
@@ -168,7 +168,7 @@
 .theme-item span,
 .disabled-state-item span {
   font-size: 0.875rem;
-  color: #4a5568;
+  
 }
 
 /* Props Reference */
@@ -179,7 +179,7 @@
 .props-reference h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #1a202c;
+  
   margin-bottom: 1.5rem;
 }
 
@@ -201,7 +201,7 @@
   text-align: left;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #4a5568;
+  
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-bottom: 1px solid #e2e8f0;
@@ -210,7 +210,7 @@
 .props-table td {
   padding: 1rem;
   font-size: 0.875rem;
-  color: #4a5568;
+  
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -227,7 +227,7 @@
 }
 
 .demo-footer p {
-  color: #4a5568;
+ 
   font-size: 0.875rem;
 }
 

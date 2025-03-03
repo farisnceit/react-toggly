@@ -1,6 +1,6 @@
 {
   "name": "react-toggly",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A highly customizable and themeable toggle switch component for React, built with TypeScript and styled-components. Supports multiple themes like iOS, Bootstrap, and Tailwind CSS, and allows for custom icons, accessibility features, and controlled/uncontrolled behavior.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",

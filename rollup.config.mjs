@@ -41,14 +41,14 @@ export default [
             commonjs(),
             typescript({ tsconfig: './tsconfig.json', declaration: false, emitDeclarationOnly: false, }),
             postcss({
-                extract: 'dist/styles.css', // Extract CSS to a separate file
+                extract: 'dist/styles1.css', // Extract CSS to a separate file
                 modules: true,
             }),
             copy({
                 targets: [
                   {
                     src: 'src/components/Toggle/style.css', // Source file
-                    dest: 'dist/', // Destination folder
+                    dest: 'dist/css/', // Destination folder
                   },
                 ],
               }),
@@ -61,6 +61,8 @@ export default [
     {
         input: 'src/index.ts',
         output: [{ file: 'dist/types/index.d.ts', format: 'esm' }],
-        plugins: [dts()],
+        plugins: [dts({
+            outputDir: 'dist/types',
+          }),],
     }
 ];

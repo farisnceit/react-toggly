@@ -22,6 +22,19 @@ npm install react-toggly
 yarn add react-toggly
 ```
 
+## Styles
+
+To use the component styles, import them in your application:
+
+```jsx
+// Import the styles in your app's entry point (e.g., App.js or index.js)
+import 'react-toggly/dist/styles.css';
+```
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a list of changes and version history.
+
 ## Usage
 
 ### Basic Usage

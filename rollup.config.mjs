@@ -47,7 +47,7 @@ export default [
             copy({
                 targets: [
                   {
-                    src: 'src/components/Toggle/style.css', // Source file
+                    src: 'src/components/Toggle/styles.css', // Source file
                     dest: 'dist/', // Destination folder
                   },
                 ],

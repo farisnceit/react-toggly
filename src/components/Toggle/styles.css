@@ -4,7 +4,8 @@
   --react-toggly-color-default: #ccc;
   --react-toggly-color-checked: #4caf50;
   --react-toggly-color-knob: #ffffff;
-  --react-toggly-color-disabled: rgba(0, 0, 0, 0.5);
+  --react-toggly-color-disabled-bg: #e9ecef;
+  --react-toggly-color-disabled-knob: #adb5bd;
   --react-toggly-text-color: #333;
 
   /* Sizes */
@@ -41,8 +42,19 @@
 
 /* Modifier: Disabled state */
 .react-toggly__wrapper--disabled {
-  opacity: var(--react-toggly-color-disabled);
   cursor: not-allowed;
+}
+
+.react-toggly__wrapper--disabled .react-toggly__slider {
+  background-color: var(--react-toggly-color-disabled-bg) !important;
+}
+
+.react-toggly__wrapper--disabled .react-toggly__slider::before {
+  background-color: var(--react-toggly-color-disabled-knob);
+}
+
+.react-toggly__wrapper--disabled .react-toggly__input:checked + .react-toggly__slider {
+  background-color: var(--react-toggly-color-disabled-bg) !important;
 }
 
 /* Element: Input */

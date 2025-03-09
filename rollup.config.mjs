@@ -41,7 +41,7 @@ export default [
             commonjs(),
             typescript({ tsconfig: './tsconfig.json', declaration: false, emitDeclarationOnly: false, }),
             postcss({
-                extract: 'dist/styles1.css', // Extract CSS to a separate file
+                extract: 'dist/styles.css', // Extract CSS to a separate file
                 modules: true,
             }),
             copy({

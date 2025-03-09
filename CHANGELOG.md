@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.6] - 2025-03-09
+
+### Added
+- Developer guide with detailed setup instructions
+- Pull request template and contribution guidelines
+- Semantic commit message format documentation
+
+## [1.2.5] - 2025-03-09
+
+### Added
+- fix: enhance disabled state styling with distinct colors
+
+- Add specific colors for disabled background (#e9ecef) and knob (#adb5bd)
+- Remove opacity-based styling in favor of explicit color values
+- Ensure consistent disabled appearance across all themes
+
 ## [1.2.4] - 2025-03-09
 
 ### Changed

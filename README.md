@@ -123,6 +123,14 @@ function App() {
 | `ariaLabel` | `string` | - | ARIA label |
 | `ariaLabelledBy` | `string` | - | ARIA labelledby |
 
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to:
+- Set up the development environment
+- Submit pull requests
+- Follow our coding standards
+- Contribute to documentation
+
 ## License
 
 MIT 

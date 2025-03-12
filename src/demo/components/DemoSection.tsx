@@ -15,7 +15,7 @@ export const DemoSection: React.FC<DemoSectionProps> = ({
   children
 }) => {
   return (
-    <div className="demo-section">
+    <div className="demo-section drop-shadow-xl">
       <h2 className="demo-section-title">{title}</h2>
       {description && (
         <p className="demo-section-description">{description}</p>

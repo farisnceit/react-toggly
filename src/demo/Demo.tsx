@@ -37,11 +37,11 @@ const Demo: React.FC = () => {
   };
 
   return (
-    <div className="demo-container bg-grey-100">
-      {/* Header */}
-      <header className=" bg-gradient-to-r from-blue-800 to-indigo-900  pb-[300px] pt-[100px]  text-white">
+    <div className="demo-container pb-5">
+      {/* Header bg-gradient-to-r from-blue-800 to-indigo-900 */}
+      <header className="header-container pb-[300px] pt-[100px]  text-white">
         <div className="header-content">
-          <h1>React Toggley</h1>
+          <h1 className='text-7xl'>React Toggly <span className='text-sm bg-white text-red-800 px-2 py-1 rounded-full'>V{import.meta.env.PACKAGE_VERSION}</span></h1>
           <p>
             A highly customizable toggle switch component for React with multiple themes and extensive customization options
           </p>
@@ -330,9 +330,8 @@ const MyComponent = () => {
       </main>
 
       {/* Footer */}
-      <footer className="demo-footer">
-        <p>
-          React Toggley - A Modern Toggle Switch Component
+      <footer className="demo-footer max-w-xl mx-auto uppercase rounded-t-full rounded-full drop-shadow-2xl transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">        
+        <p>Made with ❤️ by <a href="https://github.com/farisnceit" target="_blank">M FARIZ</a>
         </p>
       </footer>
     </div>

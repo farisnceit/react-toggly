@@ -2,7 +2,7 @@
 
 A highly customizable and themeable toggle switch component for React, built with TypeScript. Supports multiple themes like **iOS**, **Bootstrap**, and **Tailwind CSS**, and allows for custom icons, accessibility features, and controlled/uncontrolled behavior.
 
-![Toggle Demo](https://via.placeholder.com/600x200) <!-- Add a demo GIF/image here -->
+[Demo Link](https://farisnceit.github.io/react-toggly/)
 
 ## Features
 
@@ -33,7 +33,7 @@ import 'react-toggly/dist/styles.css';
 
 ## Changelog
 
-See [CHANGELOG.md](./CHANGELOG.md) for a list of changes and version history.
+See [CHANGELOG.md](https://github.com/farisnceit/react-toggly/blob/main/CHANGELOG.md) for a list of changes and version history.
 
 ## Usage
 

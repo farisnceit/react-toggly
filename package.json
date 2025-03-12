@@ -47,7 +47,8 @@
     "demo:preview": "vite build && vite preview",
     "lint": "eslint .",
     "lint:fix": "npx eslint . --fix",
-    "prepublishOnly": "npm run lint && npm run build"
+    "prepublishOnly": "npm run lint && npm run build",
+    "git:log": " git log -n 10 --pretty=format:'- %s (%cr) by %an'"
   },
   "peerDependencies": {
     "react": ">=17.0.0",

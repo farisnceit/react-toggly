@@ -1,9 +1,17 @@
+
 /* Demo Container */
 .demo-container {
   min-height: 100vh;
   background-color: #f8fafc;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
+  background-color: #fffbf5;
+background-image: radial-gradient(at 7% 23%, #fffbf5 0%, transparent 60%), radial-gradient(at 35% 21%, #f7efe5 0%, transparent 50%), radial-gradient(at 27% 89%, #c3acd0 0%, transparent 40%), radial-gradient(at 27% 41%, #7743db 0%, transparent 30%);
+}
+
+.demo-container .header-container {
+  background-color: #640d6b;
+  background-image: radial-gradient(at 23% 45%, #640d6b 0%, transparent 60%), radial-gradient(at 45% 15%, #b51b75 0%, transparent 50%), radial-gradient(at 61% 64%, #e65c19 0%, transparent 40%), radial-gradient(at 38% 5%, #f8d082 0%, transparent 30%);
 }
 
 /* Header Styles */
@@ -20,8 +28,10 @@
 }
 
 .header-content h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+  
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal; 
  
   margin-bottom: 1rem;
 }
@@ -71,7 +81,7 @@
   background-color: white;
   border-radius: 0.75rem;
   padding: 2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
 }
 
 .demo-section-title {
@@ -220,10 +230,10 @@
 
 /* Footer */
 .demo-footer {
-  background-color: white;
-  border-top: 1px solid #e2e8f0;
-  padding: 2rem 1rem;
+  background-color: white;  
+  padding: 1.5rem 1rem;
   text-align: center;
+ 
 }
 
 .demo-footer p {

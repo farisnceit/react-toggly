@@ -2,6 +2,12 @@
   "name": "react-toggly",
   "version": "1.2.5",
   "description": "A highly customizable and themeable toggle switch component for React, built with TypeScript and styled-components. Supports multiple themes like iOS, Bootstrap, and Tailwind CSS, and allows for custom icons, accessibility features, and controlled/uncontrolled behavior.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farisnceit/react-toggly.git"
+  },
+  "homepage": "https://github.com/farisnceit/react-toggly#features",
+  "license": "MIT",
   "keywords": [
     "react",
     "toggle",
@@ -23,11 +29,11 @@
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "type": "module",
-  "exports": {
-    "import": "./dist/index.js",
+  "exports": {    
     "require": "./dist/index.cjs",
-    "umd": "./dist/index.umd.js",
-    "types": "./dist/types/index.d.ts"
+    "umd": "./dist/index.umd.js",    
+    "types": "./dist/types/index.d.ts",
+    "import": "./dist/index.js"   
   },
   "files": [
     "dist",
@@ -37,9 +43,10 @@
     "dev": "vite",
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "demo:build": "vite build ",
+    "demo:build": "vite build",
     "demo:preview": "vite build && vite preview",
     "lint": "eslint .",
+    "lint:fix": "npx eslint . --fix",
     "prepublishOnly": "npm run lint && npm run build"
   },
   "peerDependencies": {
